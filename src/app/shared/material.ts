@@ -1,11 +1,23 @@
+// src/app/shared/material.ts
+// Central place for Angular Material imports (for standalone components)
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
 export const MATERIAL_IMPORTS = [
-  // Angular Material
-  import('@angular/material/button').then(m => m.MatButtonModule),
-  import('@angular/material/icon').then(m => m.MatIconModule),
-  import('@angular/material/card').then(m => m.MatCardModule),
-  import('@angular/material/toolbar').then(m => m.MatToolbarModule),
-  import('@angular/material/input').then(m => m.MatInputModule),
-  import('@angular/material/menu').then(m => m.MatMenuModule),
-  import('@angular/material/sidenav').then(m => m.MatSidenavModule),
-  import('@angular/material/list').then(m => m.MatListModule)
+  MatButtonModule,
+  MatIconModule,
+  MatCardModule,
+  MatToolbarModule,
+  MatInputModule,
+  MatMenuModule,
+  MatSidenavModule,
+  MatListModule
 ];
+
