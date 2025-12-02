@@ -16,6 +16,6 @@ import { MATERIAL_IMPORTS } from '../../shared/material';
   templateUrl: './main-layout.html',
   styleUrls: ['./main-layout.scss']
 })
-export class MainLayoutComponent {
+export class MainLayout {
   isSidenavOpen = false;
 }

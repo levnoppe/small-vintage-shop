@@ -1,0 +1,16 @@
+.products-container {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.price {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  display: block;
+}
