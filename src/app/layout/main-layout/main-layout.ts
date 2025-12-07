@@ -1,6 +1,6 @@
 // src/app/layout/main-layout/main-layout.ts
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { NgIf } from '@angular/common';
 
 import { MATERIAL_IMPORTS } from '../../shared/material';
@@ -10,7 +10,7 @@ import { MATERIAL_IMPORTS } from '../../shared/material';
   standalone: true,
   imports: [
     RouterOutlet,
-    NgIf,
+    RouterLink,
     ...MATERIAL_IMPORTS
   ],
   templateUrl: './main-layout.html',
