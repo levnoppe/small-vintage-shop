@@ -1,0 +1,37 @@
+<section class="product-details" *ngIf="product; else notFound">
+  <div class="image-wrapper">
+    <img [src]="product.imageUrl" [alt]="product.title">
+  </div>
+
+  <div class="info">
+    <h1>{{ product.title }}</h1>
+
+    <p class="description">
+      {{ product.description }}
+    </p>
+
+    <div class="meta">
+      <span class="price">
+        {{ product.price | currency:'USD' }}
+      </span>
+    </div>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" (click)="addToCart()">
+        Add to cart
+      </button>
+
+      <a mat-button routerLink="/products">
+        Back to products
+      </a>
+    </div>
+  </div>
+</section>
+
+<ng-template #notFound>
+  <section class="product-details not-found">
+    <p>Product not found.</p>
+    <a mat-button routerLink="/products">Back to products</a>
+  </section>
+</ng-template>
+
