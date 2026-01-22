@@ -13,11 +13,24 @@
       <strong class="price">{{ p.price | currency:'USD' }}</strong>
     </mat-card-content>
 
-    <mat-card-actions>
-      <button mat-button>
-        View details
-      </button>
-    </mat-card-actions>
+<mat-card-actions>
+  <button
+    mat-button
+    [routerLink]="['/products', p.id]"
+    (click)="$event.stopPropagation()"
+  >
+    View details
+  </button>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="$event.stopPropagation(); addToCart(p)"
+  >
+    Add to cart
+  </button>
+</mat-card-actions>
+
   </mat-card>
 
 </div>

@@ -1,9 +1,10 @@
 // src/app/layout/main-layout/main-layout.ts
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { NgIf } from '@angular/common';
 
 import { MATERIAL_IMPORTS } from '../../shared/material';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -17,5 +18,8 @@ import { MATERIAL_IMPORTS } from '../../shared/material';
   styleUrls: ['./main-layout.scss']
 })
 export class MainLayout {
+   private cart = inject(CartService);
+  readonly cartCount = this.cart.totalItems;
+
   isSidenavOpen = false;
 }
