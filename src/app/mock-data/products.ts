@@ -13,21 +13,21 @@ export const MOCK_PRODUCTS: Product[] = [
     id: 1,
     title: 'Vintage Leather Wallet',
     price: 45,
-    imageUrl: 'assets/mock/vintage-wallet.jpg',
+    imageUrl: 'assets/mock/vintage-wallet.jpeg',
     description: 'Handcrafted leather wallet from the 1970s.'
   },
   {
     id: 2,
     title: 'Antique Brass Clock',
     price: 120,
-    imageUrl: 'assets/mock/brass-clock.jpg',
+    imageUrl: 'assets/mock/brass-clock.jpeg',
     description: 'Restored brass table clock with intricate details.'
   },
   {
     id: 3,
     title: 'Retro Coffee Grinder',
     price: 75,
-    imageUrl: 'assets/mock/coffee-grinder.jpg',
+    imageUrl: 'assets/mock/brass-clock.jpeg',
     description: 'Fully functional 1960s mechanical grinder.'
   }
 ];

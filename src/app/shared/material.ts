@@ -9,6 +9,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatDividerModule } from '@angular/material/divider';
 
 export const MATERIAL_IMPORTS = [
   MatButtonModule,
@@ -18,6 +20,8 @@ export const MATERIAL_IMPORTS = [
   MatInputModule,
   MatMenuModule,
   MatSidenavModule,
-  MatListModule
+  MatListModule,
+  MatBadgeModule,
+  MatDividerModule
 ];
 
