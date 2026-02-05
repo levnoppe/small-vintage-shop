@@ -11,6 +11,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 export const MATERIAL_IMPORTS = [
   MatButtonModule,
@@ -22,6 +23,8 @@ export const MATERIAL_IMPORTS = [
   MatSidenavModule,
   MatListModule,
   MatBadgeModule,
-  MatDividerModule
+  MatDividerModule,
+  MatFormFieldModule,
+  MatInputModule,
 ];
 

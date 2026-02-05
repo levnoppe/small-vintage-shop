@@ -61,9 +61,10 @@
         <span>{{ cart.totalPrice() | currency:'USD' }}</span>
       </div>
 
-      <button mat-raised-button color="primary" disabled>
-        Checkout (soon)
-      </button>
+     <a mat-raised-button color="primary" routerLink="/checkout">
+       Checkout
+    </a>
+
     </mat-card>
   </div>
 

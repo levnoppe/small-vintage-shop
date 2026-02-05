@@ -1,0 +1,56 @@
+.checkout {
+  display: grid;
+  gap: 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.empty {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  justify-items: start;
+}
+
+.content {
+  display: grid;
+  gap: 1rem;
+
+  @media (min-width: 900px) {
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+  }
+}
+
+.form-card h2,
+.summary-card h2 {
+  margin-top: 0;
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+.summary-row.total {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.hint {
+  margin-top: 1rem;
+  opacity: 0.8;
+}

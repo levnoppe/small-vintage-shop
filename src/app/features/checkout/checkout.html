@@ -1,0 +1,76 @@
+<section class="checkout">
+
+  <header class="header">
+    <h1>Checkout</h1>
+    <a mat-button routerLink="/cart">Back to cart</a>
+  </header>
+
+  <mat-divider></mat-divider>
+
+  <!-- Empty cart guard -->
+  <div *ngIf="!hasItems()" class="empty">
+    <p>Your cart is empty.</p>
+    <a mat-raised-button color="primary" routerLink="/products">Go to products</a>
+  </div>
+
+  <!-- Checkout form -->
+  <div *ngIf="hasItems()" class="content">
+    <mat-card class="form-card">
+      <h2>Customer details</h2>
+
+      <form [formGroup]="form" (ngSubmit)="submit()" class="form">
+        <mat-form-field appearance="outline">
+          <mat-label>Full name</mat-label>
+          <input matInput formControlName="fullName" />
+          <mat-error *ngIf="form.controls.fullName.touched && form.controls.fullName.invalid">
+            Full name is required.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Phone</mat-label>
+          <input matInput formControlName="phone" />
+          <mat-error *ngIf="form.controls.phone.touched && form.controls.phone.invalid">
+            Phone is required.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Address</mat-label>
+          <textarea matInput rows="3" formControlName="address"></textarea>
+          <mat-error *ngIf="form.controls.address.touched && form.controls.address.invalid">
+            Address is required.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Notes</mat-label>
+          <textarea matInput rows="3" formControlName="notes"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">
+          Place order (soon)
+        </button>
+      </form>
+    </mat-card>
+
+    <mat-card class="summary-card">
+      <h2>Order summary</h2>
+
+      <div class="summary-row">
+        <span>Items</span>
+        <span>{{ cart.totalItems() }}</span>
+      </div>
+
+      <div class="summary-row total">
+        <span>Total</span>
+        <span>{{ cart.totalPrice() | currency:'USD' }}</span>
+      </div>
+
+      <p class="hint">
+        Payment and order submission will be added after backend integration.
+      </p>
+    </mat-card>
+  </div>
+
+</section>
