@@ -1,19 +1,26 @@
 <mat-sidenav-container class="app-shell">
-  <mat-sidenav class="app-sidenav" [(opened)]="isSidenavOpen" mode="side">
-    <mat-toolbar color="primary" class="sidenav-header"> Menu </mat-toolbar>
+
+  <mat-sidenav
+    class="app-sidenav"
+    [mode]="isMobile ? 'over' : 'side'"
+    [opened]="sidenavOpened"
+    (backdropClick)="closeMenu()"
+  >
+    <mat-toolbar class="sidenav-header" color="primary">
+      Menu
+    </mat-toolbar>
 
     <mat-nav-list>
-      <button mat-list-item routerLink="/">Home</button>
-
-      <button mat-list-item routerLink="/products">Products</button>
-      <button mat-list-item routerLink="/cart">Cart</button>
-      <button mat-list-item routerLink="/about">About</button>
+      <a mat-list-item routerLink="/" (click)="closeMenu()">Home</a>
+      <a mat-list-item routerLink="/products" (click)="closeMenu()">Products</a>
+      <a mat-list-item routerLink="/cart" (click)="closeMenu()">Cart</a>
+      <a mat-list-item routerLink="/about" (click)="closeMenu()">About</a>
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
     <mat-toolbar color="primary" class="app-toolbar">
-      <button mat-icon-button class="menu-btn" (click)="isSidenavOpen = !isSidenavOpen">
+      <button mat-icon-button (click)="toggleMenu()" aria-label="Open menu">
         <mat-icon>menu</mat-icon>
       </button>
 
@@ -21,14 +28,7 @@
 
       <span class="spacer"></span>
 
-      <button
-        mat-icon-button
-        routerLink="/cart"
-        [matBadge]="cartCount()"
-        [matBadgeHidden]="cartCount() === 0"
-        matBadgeOverlap="false"
-        aria-label="Cart"
-      >
+      <button mat-icon-button routerLink="/cart" aria-label="Cart">
         <mat-icon>shopping_cart</mat-icon>
       </button>
     </mat-toolbar>
@@ -37,4 +37,5 @@
       <router-outlet></router-outlet>
     </main>
   </mat-sidenav-content>
+
 </mat-sidenav-container>
